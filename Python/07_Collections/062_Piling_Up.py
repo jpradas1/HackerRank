@@ -26,7 +26,7 @@ Choose blocks from right to left in order to successfully stack the blocks.
 if __name__=='__main__':
     for t in range(int(input())):
         input()
-        lst = [int(i) for i in input().split()]
+        lst = list(map(int, input().split()))
         min_list = lst.index(min(lst))
         left = lst[:min_list]
         right = lst[min_list+1:]
