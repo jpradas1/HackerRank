@@ -38,8 +38,8 @@ def time_delta(t1, t2):
     t2 = {k: v for k, v in zip(date_names, t2)}
 
     t1, t2 = datetime(**t1), datetime(**t2)
-    tz1 = int(tz1[:-2])*3600 + int(tz1[-2:])*60
-    tz2 = int(tz2[:-2])*3600 + int(tz2[-2:])*60
+    tz1 = int(tz1[:-2])*3600 + int(tz1[0]+tz1[-2:])*60
+    tz2 = int(tz2[:-2])*3600 + int(tz2[0]+tz2[-2:])*60
     delta = abs(int((t1-t2).total_seconds()) - (tz1 - tz2))
 
     print(delta)
